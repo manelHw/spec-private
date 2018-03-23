@@ -16,7 +16,9 @@ public class Confiturerie {
 			_bocaux.add(bocal);
 			Bocal bocalelem=_bocaux.get(n);
 			// Augmenter la priorite des Bocaux "a"
-			bocalelem.setPriority(type == "a" ? 2 : 1);		
+			bocalelem.setPriority(type == "a" ? 2 : 1);
+			synchronized(bocal){
+
 			bocal.run();
 			try {
 				Thread.sleep(500);
@@ -24,15 +26,20 @@ public class Confiturerie {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			}
+			synchronized(valve){
 			valve.start();
+			
+			}
+			synchronized(etiquetage){
 			try {
-				Thread.sleep(500);
+			valve.join();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			etiquetage.start();
-
+			} 
 
 		} 
 	}
