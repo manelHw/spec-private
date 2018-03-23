@@ -10,7 +10,7 @@ public class Etiquetage extends Thread{
 	public void run() {
 		
 		
-		System.out.println("Étiquetage Commencé : " + _mybocal.get_index() + _mybocal.get_type());
+		System.out.println("Étiquetage Commencement : " + _mybocal.get_index() + _mybocal.get_type());
 		System.out.println("Étiquetage Fini : " + _mybocal.get_index() + _mybocal.get_type());
 				
 	}
