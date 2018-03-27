@@ -26,8 +26,7 @@ public class Bocal extends Thread {
 	@Override
 	public void run() {
 		
-		Bocal.commencer();
-				
+		Bocal.commencer();	
 	}
 	
 	public static void commencer() 
@@ -36,7 +35,6 @@ public class Bocal extends Thread {
 		requetteValve();
         controleValve(_type);
         controleEtiquetage();
-		
 	}
 	
 
@@ -71,38 +69,33 @@ public class Bocal extends Thread {
 	}
 	
 	public static void ouvreValve() {
-		System.out.println("ouvre valve pour : " + _index +" "+ _type + " à la valve " + _noValve);
+		System.out.println("ouvre valve pour bocal : " + _index +" "+ _type + " à la valve " + _noValve);
+		System.out.println("Remplit bocal : " + _index +" "+ _type + " à la valve " + _noValve);
 		
 	}
 
 	public static void ravitaillement() {
-		System.out.println("ravitaillement pour : " + _index +" "+ _type + " à la valve " + _noValve);
+		System.out.println("ravitaillement pour bocal : " + _index +" "+ _type + " à la valve " + _noValve);
 		
 	}
 
 	public static void finRemplissage() {
-		System.out.println("fin de remplissage de : " + _index +" "+ _type + " à la valve " + _noValve);
+		System.out.println("fin de remplissage de bocal : " + _index +" "+ _type + " à la valve " + _noValve);
 		
 	}
 
 	public static void fermeValve() {
-		System.out.println("ferme valve pour: " + _index +" "+ _type);
+		System.out.println("ferme valve pour bocal : " + _index +" "+ _type);
 		estplein=true;
 
 		
 	}
 
-	
-	
-
-
-
 	public static void commenceEtiquetage() {
 		if(estplein==true){
-			System.out.println("commencement de l'étiquetage de : " + _index +" "+ _type + " à l'étiqueteuse " + _noEtiqueteuse);
-			System.out.println("fin de l'étiquetage de : " + _index +" "+ _type + " à l'étiqueteuse " + _noEtiqueteuse);
-
-
+			System.out.println("commencement de l'étiquetage de bocal : " + _index +" "+ _type + " à l'étiqueteuse " + _noEtiqueteuse);
+			System.out.println("Étiquetage du bocal : " + _index +" "+ _type + " à l'étiqueteuse " + _noEtiqueteuse);
+			System.out.println("fin de l'étiquetage de bocal : " + _index +" "+ _type + " à l'étiqueteuse " + _noEtiqueteuse);
 		}
 		
 		estetiquete=true;
