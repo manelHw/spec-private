@@ -1,18 +1,25 @@
+package dev;
 
-public class Etiquetage extends Thread{
-	Bocal _mybocal;
+import java.util.ArrayList;
 
-	public 	Etiquetage(Bocal mybocal) {
+public class Etiquetage {
+	Integer _index;
+	Bocal _bocal;
 
-		_mybocal=mybocal;
+
+	public 	Etiquetage(Integer index) {
+
+		_index=index;
 	}
-	@Override
-	public void run() {
+	
+	public static void main(String[] args) 
+	{
+		Etiquetage etiqueteuse = new Etiquetage(1);
+		System.out.println(" Traitement d'étiquetage");
 		
-		System.out.println("Requete Étiquetage : " + _mybocal.get_index() + _mybocal.get_type());
-		System.out.println("Étiquetage Commencement : " + _mybocal.get_index() + _mybocal.get_type());
-		System.out.println("Étiquetage : " + _mybocal.get_index() + _mybocal.get_type());
-		System.out.println("Étiquetage Termine : " + _mybocal.get_index() + _mybocal.get_type());
-				
-	}
+		
+		
+		
+	}	
+	
 }
