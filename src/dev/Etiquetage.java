@@ -6,7 +6,6 @@ public class Etiquetage {
 	Integer _index;
 	Bocal _bocal;
 
-
 	public 	Etiquetage(Integer index) {
 
 		_index=index;
@@ -16,9 +15,6 @@ public class Etiquetage {
 	{
 		Etiquetage etiqueteuse = new Etiquetage(1);
 		System.out.println(" Traitement d'étiquetage");
-		
-		
-		
 		
 	}	
 	
