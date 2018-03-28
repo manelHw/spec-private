@@ -40,7 +40,6 @@ public class Bocal extends Thread {
 
 	public static void requetteValve() {
 		System.out.println("requete Valve pour bocal : " + _index +" "+ _type +  " à la valve " + _noValve);
-		
 	}
 	private static void controleValve(String _type2) {
 		if (_type =="A" ){
@@ -55,50 +54,83 @@ public class Bocal extends Thread {
 	}
 
 	private static void commncerRemplissage() {
-		ouvreValve();
-		RempliBocal();
-		fermeValve();
+			ouvreValve();
+			RempliBocal();
+			fermeValve();
 	}
 
 	public static void RempliBocal() 
 	{
 		if(stockepuisé){
 			ravitaillement();
+			remplissage();
 		}
+		remplissage();
 		finRemplissage();	
 	}
 	
 	public static void ouvreValve() {
 		System.out.println("ouvre valve pour bocal : " + _index +" "+ _type + " à la valve " + _noValve);
+		try {
+			Bocal.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void remplissage() {
 		System.out.println("Remplit bocal : " + _index +" "+ _type + " à la valve " + _noValve);
-		
+		try {
+			Bocal.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static void ravitaillement() {
 		System.out.println("ravitaillement pour bocal : " + _index +" "+ _type + " à la valve " + _noValve);
-		
+		try {
+			Bocal.sleep(10000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static void finRemplissage() {
 		System.out.println("fin de remplissage de bocal : " + _index +" "+ _type + " à la valve " + _noValve);
-		
 	}
 
 	public static void fermeValve() {
 		System.out.println("ferme valve pour bocal : " + _index +" "+ _type);
 		estplein=true;
-
-		
+		try {
+			Bocal.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static void commenceEtiquetage() {
 		if(estplein==true){
 			System.out.println("commencement de l'étiquetage de bocal : " + _index +" "+ _type + " à l'étiqueteuse " + _noEtiqueteuse);
-			System.out.println("Étiquetage du bocal : " + _index +" "+ _type + " à l'étiqueteuse " + _noEtiqueteuse);
-			System.out.println("fin de l'étiquetage de bocal : " + _index +" "+ _type + " à l'étiqueteuse " + _noEtiqueteuse);
+			etiquetage();
+			finEtiquetage();
 		}
 		
 		estetiquete=true;
+	}
+	
+	public static void etiquetage() {
+		System.out.println("Étiquetage du bocal : " + _index +" "+ _type + " à l'étiqueteuse " + _noEtiqueteuse);
+		try {
+			Bocal.sleep(1500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void finEtiquetage() {
+		System.out.println("fin de l'étiquetage de bocal : " + _index +" "+ _type + " à l'étiqueteuse " + _noEtiqueteuse);
 	}
 
 	public synchronized String get_type() {

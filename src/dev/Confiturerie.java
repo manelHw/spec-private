@@ -20,8 +20,6 @@ public class Confiturerie {
 		Confiturerie.nv = nValves;
 		Confiturerie.ne = nEtiqueteuses;
 		
-				
-		
 		bocaux = new Bocaux(nBocaux, nValves, nEtiqueteuses);					
 	}		
 	public void start(){
